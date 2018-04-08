@@ -1,6 +1,6 @@
 {
   "name": "dev-hook-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Add hook utilities for git commit workflow.",
   "main": "index.js",
   "scripts": {
