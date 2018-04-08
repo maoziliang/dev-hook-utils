@@ -1,0 +1,49 @@
+{
+  "name": "dev-hook-utils",
+  "version": "1.0.3",
+  "description": "Add hook utilities for git commit workflow.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node ./dist/bin/install.js",
+    "postuninstall": "node ./dist/bin/install.js --cleanup",
+    "build": "rm *.tgz; babel src -d dist; npm pack;"
+  },
+  "author": "",
+  "license": "MIT",
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "engines": {
+    "node": ">=4.4.3"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^6.1.3",
+    "@commitlint/lint": "^6.1.3",
+    "@commitlint/load": "^6.1.3",
+    "babel-eslint": "^8.2.2",
+    "babel-runtime": "^6.26.0",
+    "chalk": "^2.3.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "fs-extra": "^5.0.0",
+    "glob": "^7.1.2",
+    "inquirer": "^3.3.0",
+    "is-ci": "^1.1.0",
+    "word-wrap": "^1.2.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
