@@ -23,7 +23,7 @@ function getCommitingFiles() {
   });
   const files = result.stdout.toString().split('\n');
   return files
-    .filter(file => file.length > 0 && file.endsWith('.js'))
+    .filter(file => file.length > 0 && (file.endsWith('.js') || file.endsWith('.vue')))
     .map(file => ({
       filename: file,
       content: getStagedFileContent(file),
@@ -70,8 +70,7 @@ function run() {
   }
   console.log(chalk.bold('start to lint staged files'));
   const cli = new eslint.CLIEngine({
-    parser: 'babel-eslint',
-    configFile: hasCustomizedConfigFile() ? null : require.resolve('eslint-config-airbnb/base'),
+    configFile: hasCustomizedConfigFile() ? null : require.resolve('./eslintrc.js'),
   });
   const results = files.reduce(
     (rs, file) => [...rs, ...cli.executeOnText(file.content, file.filename).results],
