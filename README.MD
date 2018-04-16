@@ -29,7 +29,13 @@ npm install dev-hook-utils
 
 1. eslint 代码检查
 
-    直接使用.eslintrc.*文件配置规则
+    直接使用.eslintrc.*文件配置规则。直接
+    ``` js
+    {
+      // 直接基于hooks中的规则做校验
+      extends: [require.resolve('dev-hook-utils/dist/hooks/eslintrc.js')]
+    }
+    ```
 
 1. hook 自定义钩子
 
